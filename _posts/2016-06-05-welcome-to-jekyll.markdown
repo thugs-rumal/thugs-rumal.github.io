@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Rumal Docker"
 date:   2016-06-05 06:47:50 -0700
 categories: jekyll update
 ---
