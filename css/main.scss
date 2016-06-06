@@ -14,9 +14,9 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
+
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -27,6 +27,10 @@ $content-width:    1000px;
 
 $on-palm:          600px;
 $on-laptop:        1000px;
+
+a {
+    text-decoration: none;
+}
 
 .links {
     max-width: calc(1000px - (30px * 2));
@@ -39,17 +43,35 @@ $on-laptop:        1000px;
 .btn {
     display: inline-block;
     margin-bottom: 1rem;
-    color: rgba(0, 0, 0, 1);
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
     border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    border-width: 2px;
+    border-radius: 0.6rem;
+    width: 150px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 
+
+
 // Use media queries like this:
+.site-header {
+    background-color: #009688;
+}
+
+.site-title:link, .site-title:visited {
+    color: #ffffff;
+}
+
+.site-nav .page-link {
+    color: #ffffff;
+}
 // @include media-query($on-palm) {
 //     .wrapper {
 //         padding-right: $spacing-unit / 2;
@@ -70,3 +92,17 @@ $on-laptop:        1000px;
         "layout",
         "syntax-highlighting"
 ;
+
+.site-header {
+    background-color: #009688;
+}
+
+.site-title:link, .site-title:visited {
+    color: #ffffff;
+}
+
+.site-nav .page-link {
+    color: #ffffff;
+}
+
+
