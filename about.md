@@ -1,21 +1,18 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
+More information about about Thug and Rumal can be found on [The Honeynet Project](https://www.honeynet.org)
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Information about Thug: 
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+- [Thug and the art of web client tracking inspection](https://sysenterhoneynet.wordpress.com/2015/01/27/thug-and-the-art-of-web-client-tracking-inspection/)
 
 
-{% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
-{% endfor %}
+Information about Rumal: 
+
+- [GSoC 2015: Introducing Thug’s Rumal](https://sysenterhoneynet.wordpress.com/2015/03/06/gsoc-2015-introducing-thugs-rumal/)
+- [GSoC 2016 – Rumal take 2](https://sysenterhoneynet.wordpress.com/2016/03/06/gsoc-2016-rumal-take-2/)
+- [Rumal, a web GUI for Thug](https://www.honeynet.org/taxonomy/term/218)
 
