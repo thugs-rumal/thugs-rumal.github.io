@@ -8,6 +8,8 @@ More information about about Thug and Rumal can be found on [The Honeynet Projec
 Information about Thug: 
 
 - [Thug and the art of web client tracking inspection](https://sysenterhoneynet.wordpress.com/2015/01/27/thug-and-the-art-of-web-client-tracking-inspection/)
+- [Thug](http://buffer.github.io/thug/)
+- [Thug Documentation](http://buffer.github.io/thug/doc/)
 
 
 Information about Rumal: 

@@ -10,13 +10,13 @@ title: Thug's Rumal
 email: dennis.parchkov@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Thug is a tool for studying exploit kits by emulating a web browser.
-  Information extracted can aid in determining if a web page is malicious.
-  Rumal was developed  to provide a web GUI for thug allowing the visualiszation
+  Information extracted can aid in determining if a website is malicious.
+  Rumal was developed to provide a web GUI for thug allowing the visualiszation
   of Thug's analysis.
-  This website provides usefull information about the development of Rumal plus any updates we have on it. 
+  This website provides usefull information about the development of Rumal and any updates we have on it.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-github_username:  Dennisparchkov
+github_username:  thugs-rumal
 
 # Build settings
 markdown: kramdown
