@@ -1,0 +1,34 @@
+
+Welcome to Rumal's documentation!
+=================================
+
+From Wikipedia, the free encyclopedia:
+    
+    A rumāl is a piece of clothing similar to a handkerchief or bandana. [...] The rumāl was used by the Thugs in India as a method of strangulation. A coin was knotted in one end of the scarf, and would be swung around the neck of the victim; who would then be strangled in the most brutal and abhorrent manner.
+    
+This project aims to be `Thug <http://buffer.github.io/thug/>`_’s dress - providing a convenient web GUI - but also its weapon, as it should provide a set of tools that should enrich Thug’s output with new metadata and allow for correlation of results.
+
+
+While it is perfectly possible to use it as a simple web GUI for Thug on your own computer, with you as the only user, Rumāl has been designed to support multi-user environments, where a single back-end can serve to multiple front-ends. Also, work is in progress to extend Rumal so that that you can comfortably share your results, settings, etc. resulting in easy collaboration with other users.
+
+
+
+User Guide:
+-----------
+
+.. toctree::
+   :maxdepth: 2
+   
+   intro
+   architecture
+   install
+   docker
+   quickstart
+   advancedusage
+   social
+   advancedsearch
+   plugins
+   development
+
+
+

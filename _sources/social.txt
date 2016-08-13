@@ -1,0 +1,52 @@
+Rumal Social
+==============
+
+
+Private and Public
+-------------------
+
+When creating a scan you have different sharing models, public, private and within groups.
+
+The public model means that you share the scan (including tags and comments) to the entire user base. All user can add tags to your scan and/or post a comment on a node. If you want to benefit the most from Rumal collaboration this sharing model.
+
+If you want to keep your scans private, which means only you will have access to the page. No one but you can post comments or tags.
+
+You can change the sharing model on your scans at any time by going to the setting tab in your report.
+
+
+Groups
+------------------
+
+The third sharing models with groups allows you to share your scan with a select number of users who will can view, comment and tag in your scan. Groups are a great way of grouping your friends, colleagues or organisations together within Rumal.
+
+You would need to create a group or already be part of one.
+
+Your profile displays the groups you are a member of as well as the possibility to create a new one. This page is accessible by clicking your name in the top right and navigating to Profile.
+
+**Group Page:**
+
+Clicking on a group will display the group's page with scans shared within this group, the group admin and the members of the group. The admin can at any time add/remove users on this page.
+
+**Creating Groups:**
+
+From your profile click on create group, give your group a name and add some members to create your own group. You can manage the members at any time on the group page.
+
+**Adding Scans:**
+
+When creating a new scan or in the report of an already existing one, select share within groups and choice the groups you wish to share the scans with. Your scan is now shared within the groups.
+
+
+Comments
+---------
+
+You have some interesting or useful information about an IP address or URL, then post up a comment on that node so that others can benefit. Based on the sharing model of the scan, a different number of users can view your comment. 
+
+Tags
+----- 
+
+You want to know keywords about a scan, look here. 
+
+If you think you understand the results you can add tags to the scan that are used as keywords. This can be very useful for users wish to find a particular scan or some specific behaviour. 
+
+Tags are usually single words or short text describing different aspects the scan.
+

@@ -1,0 +1,241 @@
+.. _install-label:
+
+Installation
+============
+
+
+Frontend-GUI
+------------
+
+**Requirements:**
+
+- `MongoDB <https://docs.mongodb.com/manual/installation/>`_
+
+You can find a list of required python modules in requirements.txt
+
+**Install:**
+
+To get Rumāl's source code, you can run the following command:
+
+.. code-block:: bash
+
+	$ git clone git@github.com:thugs-rumal/rumal.git
+
+**Please consider using VirtualEnv from now on, especially if you already have other projects running on Django versions other than 1.9**. Installing VirtualEnv is extremely easy:
+
+.. code-block:: bash
+
+	$ sudo pip install virtualenv
+
+Actually, you only need sudo if you're installing virtualenv globally (which I suggest you to do). Now, cd to Rumāl's root directory to create and activate your virtual environment:
+
+.. code-block:: bash
+
+	$ cd rumal
+	$ virtualenv venv
+	$ source venv/bin/activate
+
+That's all. The first command will create a folder named venv, with a copy of the Python executable, pip and some other tools; the second command will activate the virtual environment for you. From now on, every time you run pip install, the requested modules will be installed locally, without touching your global Python environment. When you're done with Rumāl, just run deactivate to exit from venv. Please also consider using `Autoenv <https://github.com/kennethreitz/autoenv>`_ to automatically activate your virtual environment every time you enter the folder (and to automatically deactivate it when you leave).
+
+
+Now, you can install Rumāl's dependencies by running the following command from Rumāl's root directory. 
+
+.. warning::
+
+	- WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
+
+.. code-block:: bash
+
+	$ pip install -r requirements.txt
+
+Now you can setup the database (which, for now, uses SQLite as the backend) and create your superuser by running (from Rumāl's root directory):
+
+.. code-block:: bash
+
+	$ python manage.py makemigrations
+	$ python manage.py migrate
+	$ python manage.py createsuperuser
+
+**Basic configuration:**
+
+Before running Rumāl's front-end, you will need to let it know how to reach the back-end. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to :ref:`config-label`
+ 
+you will need to configure the front-end by creating a new configuration file by running (from the front-end's root):
+
+.. code-block:: bash
+
+	$ cp conf/backend.conf.example conf/backend.conf
+
+You will need to specify the location of the master backend for the host field and a list available backend's in the BE field, this is used to post tasks on private queues to a specific backend.
+
+
+
+You should also make sure that the Mongo Daemon is running, you can start it like so:
+
+.. code-block:: bash
+	
+	$ mongod
+
+
+
+Running Rumal's front-end
+---------------------------
+
+The front-end module is composed of three separate daemons: fdaemon, enrich and the web server.
+
+Both fdaemon and enrich were both developed as management commands, so you can run them by using:
+
+.. code-block:: bash
+
+	$ python manage.py fdaemon > /dev/null 2>&1 &
+	$ python manage.py enrich > /dev/null 2>&1 &
+
+Of course, redirecting the output to a log file or, better yet, using separate consoles and letting them run without detaching will give you a lot more info about what's happening.
+
+Running the web server is as simple as doing:
+
+.. code-block:: bash
+
+	$ python manage.py runserver
+
+Or, if you want your server to be reachable from the external network:
+
+.. code-block:: bash
+
+	$ python manage.py runserver 0.0.0.0:8000
+
+Now you can connect to the GUI by pointing your browser to http://127.0.0.1:8000/ (or to whatever IP/port you chose).
+
+
+
+
+
+
+Back-end
+--------
+
+**Requirements:**
+
+- `Docker <https://docs.docker.com/engine/installation/>`_
+- `Mongodb <https://docs.mongodb.com/manual/installation/>`_
+- `RabbitMQ <https://www.rabbitmq.com/download.html>`_
+
+You can find a list of required python modules in requirements.txt
+
+**Docker:**
+
+Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. To do so, create a  Unix group called docker and add your user to it. Refer to the `docker pages <https://docs.docker.com/v1.8/installation/ubuntulinux/#create-a-docker-group>`_ if you are having problems running docker without sudo.
+
+
+.. code-block:: bash
+
+	$ sudo usermod -aG docker USER
+
+Replace USER with the user's name you wish to add to the docker group.
+
+Log out and log back in.
+
+To verify if it has worked, open up a terminal and run :
+
+.. code-block:: bash
+	
+	$ docker ps -a
+
+If this fails with a message similar to this:
+
+.. code-block:: bash
+
+	Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?
+
+**MongoDB:**
+
+MongoDB should be configured and running on your host. It should also be reachable by the container running Thug: to achieve this, you should modify your /etc/mongodb.conf file finding the following line:
+
+.. code-block:: bash
+
+	bind_ip = 127.0.0.1
+
+You can remove or comment it if you want MongoDB to be listening on all interfaces; else, if you want it to run only on localhost and on the internal docker0 interface, change it to read:
+
+.. code-block:: bash
+
+	bind_ip = 127.0.0.1,172.17.42.1
+
+Please replace 172.17.42.1 with whatever address your docker0 interface is set to (you can get it by running ifconfig docker0).
+
+**Install**:
+
+To get Rumāl's back-end source code, you can run the following command:
+
+.. code-block:: bash
+
+	$ git clone git@github.com:thugs-rumal/rumal_back.git
+
+Please consider using VirtualEnv from now on, especially if you already have other projects running on Django versions other than 1.9. Installing VirtualEnv is extremely easy:
+
+.. code-block:: bash
+
+	$ sudo pip install virtualenv
+
+Actually, you only need sudo if you're installing virtualenv globally (which I suggest you to do). Now, cd to Rumāl's backend root directory to create and activate your virtual environment:
+
+.. code-block:: bash
+
+	$ cd rumal_back
+	$ virtualenv venv
+	$ source venv/bin/activate
+
+Now, you can install Rumāl back-end's own dependencies by running the following command from the root directory. 
+
+.. warning::
+
+	- WARNING: Rumāl's backend requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
+
+
+.. code-block:: bash
+
+	$ pip install -r requirements.txt
+
+
+Now you can setup the database (which, for now, uses SQLite as the backend) and create your superuser by running (from Rumāl back-end's root directory):
+
+.. code-block:: bash
+
+	$ python manage.py makemigrations
+	$ python manage.py migrate
+	$ python manage.py createsuperuser
+
+**Basic configuration:**
+
+Before running Rumāl's back-end, you will need to let it know where to find the ANY queue. If this is your only instance of the backend you can put localhost. If you have another instance of the backend running which has this queue you should put its IP address. Tasks posted on the any queue will be picked up by the first available backend
+
+You will need to create the back-end’s configuration file:
+
+.. code-block:: bash
+
+	$ cp conf/backend.conf.example conf/backend.conf
+
+To find out what fields are required in the config files, please refer to :ref:`config-label`.
+
+
+Running Rumal's backend
+------------------------
+
+First of all, you will need to run the backend daemon. IMPORTANT: please make sure that the user you run the backend daemon with can run Docker images (e.g. run it as root or add it to the docker group or create a sudoers entry to allow it to run /usr/bin/docker without password, whatever).
+
+.. code-block:: bash
+
+	$ python manage.py run_thug
+
+Run the RabbitMQ consumer to handle incomming connection
+
+.. code-block:: bash
+
+	$ python manage.py consumer
+
+
+
+Rumal is licensed under the GPLv2 or later. Rumal releases also include and make use of other libraries with their own separate licenses.
+
+The license is available `here <https://github.com/pdelsante/rumal/blob/master/COPYING>`_.
+

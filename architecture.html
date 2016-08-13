@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Architecture &mdash; Rumal 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Rumal 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Installation" href="install.html"/>
+        <link rel="prev" title="Introduction" href="intro.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Rumal
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#communications">Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-configuration">Communication Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedusage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Rumal</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<p>Rumal is divided into two big parts namely the back-end and the front-end. Each has access to its own MySQL based DB as well as MongoDB. The steps how a scan is completed are given below.</p>
+<img alt="_images/arch.png" src="_images/arch.png" />
+<p><em>Figure: Architecture Diagram for Rumal</em></p>
+<ul class="simple">
+<li>User submits task via front-end API and it gets store in the Front DB.</li>
+<li>The Front-end daemon periodically checks for new tasks and puts it on a back-end RPC queue (RabbitMQ) depending on which backend has been chosen by the user.</li>
+<li>The back-end consumer daemon receives the task on its private queue or the public any queue. The task is saved on the Back-DB. The consumer waits until a document is produced or until timeout.</li>
+<li>Run-Thug daemon periodically checks for new tasks in Back-DB and submits them to Thug which stores them in Back Mongo DB.</li>
+<li>Run-thug then proceeds to generate a document that contains all the info combined from many docs generated by Thug and stores its document ID in the Back DB.</li>
+<li>Once the thug task is completed, the back-end consumer replies to the front-end (via a RPC reply queue given when sending the message) with the document from the Back Mongo-DB.</li>
+<li>Front-end daemon receives the reply. The document is saved in the front MongoDB and the document ID added to the Front DB.</li>
+<li>The enrichment daemon acts on finished tasks and augments their data as per the plugins using internet and other resources. This augmented data is save to the MongoDB.</li>
+<li>The tasks are then retrieved using Front-end API and then displayed to the user.</li>
+</ul>
+<p><strong>Purpose &amp; Design:</strong></p>
+<p>This project aims to be Thug&#8217;s dress - providing a convenient web GUI - but also its weapon, as it should provide a set of tools that should enrich Thug&#8217;s output with new metadata and allow for correlation of results.</p>
+<p>While it is perfectly possible to use it as a simple web GUI for Thug on your own computer, with you as the only user, Rumāl has been designed to support multi-user environments, just like a sort of social network, allowing you to share your results and your settings with other users and groups.</p>
+<p>Rumal is based on a model that ensures that the backend (where the analysis will be done) and the frontend (client facing side and the social network) remain decoupled. Keeping this in mind the Backend comprises of a Django Project with models for Tasks that interacts with the Thug Daemon. The Daemon reads and writes to the models of the Django Project. The Django Project included a RESTful API used by the frontend to submit tasks and fetch results and files, but this has been modified and now uses RabbitMQ message broker as a communication system between components.</p>
+<div class="section" id="communications">
+<h2>Communications<a class="headerlink" href="#communications" title="Permalink to this headline">¶</a></h2>
+<p>Rumal uses RabbitMQ communication system to send messages between front-end and back-end. RabbitMQ is a message broker that implements the Advanced Message Queuing Protocol (AMQP).</p>
+<p>Rumal’s front end sends a request to an RPC queue connected to one or more back-ends. This request contains task data and the call back queue to the front-end. Once the back-end has processed the message and run the scan, a reply is sent back to the call back queue connected to the front-end, containing scan results. This pattern is referred to as Remote Procedure Call (RPC) model on the RabbitMQ website.</p>
+<p>Rumal was built to support the use multiple deployed front-ends and back-ends. Users can choice which back-end to use or the scans can be picked up by the first available back-end.</p>
+<div class="line-block">
+<div class="line">A back-end is listening on 2 rabbitmq queues, a single any_queue (may be local or remote) and its own the private queue. The typical configuration is to have one any queue that all back-ends have access to, the back-end that contains the any_queue is called the master back-end. Each back-end should have its own private queue.</div>
+</div>
+<img alt="_images/rabbitSingle.png" src="_images/rabbitSingle.png" />
+<p><em>Figure: Front-end sending task to a specific back-end</em></p>
+<p>FE-02 has a task that needs to be sent to BE-02. It creates the call back queue on FE-02 and posts the message on BE-02&#8217;s private queue. FE-02 now waits for the reply on the call back queue.
+BE-02 receives the task on its private queue and process the message. Once the Thug scan is run on the data provided in the task data, it sends the required data in a reply message on the call back queue for FE-02. FE-02 receives the message and saves the data in the databases.</p>
+<img alt="_images/rabbitMultiple.png" src="_images/rabbitMultiple.png" />
+<p><em>Figure: Front-end sending task to Any backend, can be picked up by BE-01 or BE-02</em></p>
+<p>FE-02 now has a new task, but this time no backend is specified for it to run on. In this case it create a call back queue and posts the message on the any queue. In this topology, the any queue is situated in BE-01 and BE-02 has access to this queue (configured in the BE-02 config file). Either BE-01 or BE-02 can receive the message based upon their current load of tasks. The message will be processed and a reply will be sent to FE-02 call back queue containing the results.</p>
+</div>
+<div class="section" id="communication-configuration">
+<span id="config-label"></span><h2>Communication Configuration<a class="headerlink" href="#communication-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Currently configuration files on the back-end and front-end are used to link them together.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="o">[</span>backend<span class="o">]</span>
+<span class="nv">host</span> <span class="o">=</span> localhost
+<span class="nv">is_master</span> <span class="o">=</span> <span class="nb">true</span>
+</pre></div>
+</div>
+<p>Back-end config file.</p>
+<ul class="simple">
+<li><cite>host</cite>: IP address of the master back-end where the any_queue is located. If the current back-end is master then this should be localhost.</li>
+<li><cite>is_master</cite>: Boolean telling if this is master back-end.</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="o">[</span>backend<span class="o">]</span>
+<span class="nv">host</span> <span class="o">=</span>
+<span class="nv">rabbit_user</span> <span class="o">=</span> ****
+<span class="nv">rabbit_password</span> <span class="o">=</span> ****
+<span class="nv">BE</span> <span class="o">=</span>
+</pre></div>
+</div>
+<p>Front-end config file.</p>
+<ul class="simple">
+<li><cite>host</cite>: IP address of master back-end.</li>
+<li><cite>rabbit_user, rabbit_password</cite>: rabbit credentials.</li>
+<li><cite>BE</cite>: IP addresses of none master back-ends (0.0.0.0, 1.1.1.1 ...).</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016 Rumal Developers.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

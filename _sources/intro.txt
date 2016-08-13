@@ -1,0 +1,30 @@
+
+Introduction
+============
+
+Features
+--------
+Rumal is in active development and currently has support for the following features.
+
+- Running scans via GUI.
+- Support for multiple front-ends on a common back-end. User can choice which back-end (from a list of available back-ends) to submit the scan to, or select any.
+- Graphing of scan data into a tree.
+- Geo IP based info visualization using MaxMind DB
+- A built-in plugin for adding Whois data lookup.
+- Multiple sharing modes: Private, Public and within Groups
+- Bookmark Public and your own Scans.
+- Code highlighting for stored code using Google Code Prettify
+- Enrichment daemon couple with a simple plugin development API to allow extension as needed.
+- Social elements: Commenting on a specific node in the scan tree, modifying sharing modes of scans and adding tags to scans.
+- Advanced searching scans available to view with our custom query language.
+
+
+
+License
+-------
+
+Rumal is licensed under the GPLv2 or later. Rumal releases also include and make use of other libraries with their own separate licenses.
+
+The license is available `here <https://github.com/pdelsante/rumal/blob/master/COPYING>`_.
+
+
