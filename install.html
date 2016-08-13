@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Rumal 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Rumal 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Docker" href="docker.html"/>
+        <link rel="prev" title="Architecture" href="architecture.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Rumal
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frontend-gui">Frontend-GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-rumal-s-front-end">Running Rumal&#8217;s front-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#back-end">Back-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-rumal-s-backend">Running Rumal&#8217;s backend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedusage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Rumal</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<span id="install-label"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="frontend-gui">
+<h2>Frontend-GUI<a class="headerlink" href="#frontend-gui" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirements:</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.mongodb.com/manual/installation/">MongoDB</a></li>
+</ul>
+<p>You can find a list of required python modules in requirements.txt</p>
+<p><strong>Install:</strong></p>
+<p>To get Rumāl&#8217;s source code, you can run the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git clone git@github.com:thugs-rumal/rumal.git
+</pre></div>
+</div>
+<p><strong>Please consider using VirtualEnv from now on, especially if you already have other projects running on Django versions other than 1.9</strong>. Installing VirtualEnv is extremely easy:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo pip install virtualenv
+</pre></div>
+</div>
+<p>Actually, you only need sudo if you&#8217;re installing virtualenv globally (which I suggest you to do). Now, cd to Rumāl&#8217;s root directory to create and activate your virtual environment:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> rumal
+$ virtualenv venv
+$ <span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>That&#8217;s all. The first command will create a folder named venv, with a copy of the Python executable, pip and some other tools; the second command will activate the virtual environment for you. From now on, every time you run pip install, the requested modules will be installed locally, without touching your global Python environment. When you&#8217;re done with Rumāl, just run deactivate to exit from venv. Please also consider using <a class="reference external" href="https://github.com/kennethreitz/autoenv">Autoenv</a> to automatically activate your virtual environment every time you enter the folder (and to automatically deactivate it when you leave).</p>
+<p>Now, you can install Rumāl&#8217;s dependencies by running the following command from Rumāl&#8217;s root directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</li>
+</ul>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Now you can setup the database (which, for now, uses SQLite as the backend) and create your superuser by running (from Rumāl&#8217;s root directory):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
+</pre></div>
+</div>
+<p><strong>Basic configuration:</strong></p>
+<p>Before running Rumāl&#8217;s front-end, you will need to let it know how to reach the back-end. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to <a class="reference internal" href="architecture.html#config-label"><span class="std std-ref">Communication Configuration</span></a></p>
+<p>you will need to configure the front-end by creating a new configuration file by running (from the front-end&#8217;s root):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cp conf/backend.conf.example conf/backend.conf
+</pre></div>
+</div>
+<p>You will need to specify the location of the master backend for the host field and a list available backend&#8217;s in the BE field, this is used to post tasks on private queues to a specific backend.</p>
+<p>You should also make sure that the Mongo Daemon is running, you can start it like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mongod
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-rumal-s-front-end">
+<h2>Running Rumal&#8217;s front-end<a class="headerlink" href="#running-rumal-s-front-end" title="Permalink to this headline">¶</a></h2>
+<p>The front-end module is composed of three separate daemons: fdaemon, enrich and the web server.</p>
+<p>Both fdaemon and enrich were both developed as management commands, so you can run them by using:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py fdaemon &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+$ python manage.py enrich &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Of course, redirecting the output to a log file or, better yet, using separate consoles and letting them run without detaching will give you a lot more info about what&#8217;s happening.</p>
+<p>Running the web server is as simple as doing:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<p>Or, if you want your server to be reachable from the external network:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py runserver 0.0.0.0:8000
+</pre></div>
+</div>
+<p>Now you can connect to the GUI by pointing your browser to <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> (or to whatever IP/port you chose).</p>
+</div>
+<div class="section" id="back-end">
+<h2>Back-end<a class="headerlink" href="#back-end" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirements:</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.docker.com/engine/installation/">Docker</a></li>
+<li><a class="reference external" href="https://docs.mongodb.com/manual/installation/">Mongodb</a></li>
+<li><a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a></li>
+</ul>
+<p>You can find a list of required python modules in requirements.txt</p>
+<p><strong>Docker:</strong></p>
+<p>Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. To do so, create a  Unix group called docker and add your user to it. Refer to the <a class="reference external" href="https://docs.docker.com/v1.8/installation/ubuntulinux/#create-a-docker-group">docker pages</a> if you are having problems running docker without sudo.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo usermod -aG docker USER
+</pre></div>
+</div>
+<p>Replace USER with the user&#8217;s name you wish to add to the docker group.</p>
+<p>Log out and log back in.</p>
+<p>To verify if it has worked, open up a terminal and run :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker ps -a
+</pre></div>
+</div>
+<p>If this fails with a message similar to this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Cannot connect to the Docker daemon. Is <span class="s1">&#39;docker daemon&#39;</span> running on this host?
+</pre></div>
+</div>
+<p><strong>MongoDB:</strong></p>
+<p>MongoDB should be configured and running on your host. It should also be reachable by the container running Thug: to achieve this, you should modify your /etc/mongodb.conf file finding the following line:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">bind_ip</span> <span class="o">=</span> 127.0.0.1
+</pre></div>
+</div>
+<p>You can remove or comment it if you want MongoDB to be listening on all interfaces; else, if you want it to run only on localhost and on the internal docker0 interface, change it to read:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">bind_ip</span> <span class="o">=</span> 127.0.0.1,172.17.42.1
+</pre></div>
+</div>
+<p>Please replace 172.17.42.1 with whatever address your docker0 interface is set to (you can get it by running ifconfig docker0).</p>
+<p><strong>Install</strong>:</p>
+<p>To get Rumāl&#8217;s back-end source code, you can run the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git clone git@github.com:thugs-rumal/rumal_back.git
+</pre></div>
+</div>
+<p>Please consider using VirtualEnv from now on, especially if you already have other projects running on Django versions other than 1.9. Installing VirtualEnv is extremely easy:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo pip install virtualenv
+</pre></div>
+</div>
+<p>Actually, you only need sudo if you&#8217;re installing virtualenv globally (which I suggest you to do). Now, cd to Rumāl&#8217;s backend root directory to create and activate your virtual environment:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> rumal_back
+$ virtualenv venv
+$ <span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>Now, you can install Rumāl back-end&#8217;s own dependencies by running the following command from the root directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>WARNING: Rumāl&#8217;s backend requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</li>
+</ul>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Now you can setup the database (which, for now, uses SQLite as the backend) and create your superuser by running (from Rumāl back-end&#8217;s root directory):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
+</pre></div>
+</div>
+<p><strong>Basic configuration:</strong></p>
+<p>Before running Rumāl&#8217;s back-end, you will need to let it know where to find the ANY queue. If this is your only instance of the backend you can put localhost. If you have another instance of the backend running which has this queue you should put its IP address. Tasks posted on the any queue will be picked up by the first available backend</p>
+<p>You will need to create the back-end’s configuration file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cp conf/backend.conf.example conf/backend.conf
+</pre></div>
+</div>
+<p>To find out what fields are required in the config files, please refer to <a class="reference internal" href="architecture.html#config-label"><span class="std std-ref">Communication Configuration</span></a>.</p>
+</div>
+<div class="section" id="running-rumal-s-backend">
+<h2>Running Rumal&#8217;s backend<a class="headerlink" href="#running-rumal-s-backend" title="Permalink to this headline">¶</a></h2>
+<p>First of all, you will need to run the backend daemon. IMPORTANT: please make sure that the user you run the backend daemon with can run Docker images (e.g. run it as root or add it to the docker group or create a sudoers entry to allow it to run /usr/bin/docker without password, whatever).</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py run_thug
+</pre></div>
+</div>
+<p>Run the RabbitMQ consumer to handle incomming connection</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python manage.py consumer
+</pre></div>
+</div>
+<p>Rumal is licensed under the GPLv2 or later. Rumal releases also include and make use of other libraries with their own separate licenses.</p>
+<p>The license is available <a class="reference external" href="https://github.com/pdelsante/rumal/blob/master/COPYING">here</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral" title="Architecture" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016 Rumal Developers.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+Docker
+============
+
+Want to test out the tool ? You can quickly run an instance of Rumal via this docker installation and scan using `Thug <http://buffer.github.io/thug/>`_ for malicious websites. This docker version is only to be used for testing purposes. Feel free to post up an issues you encounter on our `github page <https://github.com/thugs-rumal/rumal_docker>`_ .
+
+
+Requirements 
+---------------
+
+System-wide requirements:
+
+* Docker
+
+
+Docker
+--------
+
+You will need docker to be able to build dockefiles, follow the instructions on this `link <https://docs.docker.com/engine/installation/>`_ on your respective system. You will need to be able to run the command docker-compose.
+
+
+Installation
+----------------
+
+Getting rumal docker
+
+You can directly clone the GitHub repository like so:
+
+.. code-block:: bash
+
+    $ git clone  https://github.com/thugs-rumal/rumal_docker.git
+
+
+Build
+--------
+
+.. code-block:: bash
+
+    $ cd rumal_docker
+    $ docker-compose build
+
+
+Run
+--------
+
+The following command will create rumaldocker_backend_1 and rumaldocker_frontend_1 and run the two containers:
+
+.. code-block:: bash
+
+    $ docker-compose up 
+
+
+Your instance of rumal is now ready to use.
+
+Rumal back-end is running on (IP):8000/admin.
+
+Rumal front-end will be running on (IP):8080.
+
+
+Connection
+--------------
+
+**Windows:**
+
+On Windows the Docker daemon is inside a Linux VM. So to connect to it you need to find out this VM’s local IP address (which isn't 127.0.0.1).
+
+To find the IP address: 
+
+.. code-block:: bash
+
+    $ docker-machine ip
+
+or
+
+The IP address displayed at the top of the Docker Quick start Terminal
+
+**Ubuntu:**
+
+127.0.0.1:8080 should work to access Rumal.
+
+**Login:** 
+
+- Default user: admin
+- Default password: admin
+
+
+Tests
+--------
+
+This has been tested on :
+
+Ubuntu 16.04 Desktop / Docker version 1.11.0
+

@@ -1,0 +1,41 @@
+Advanced Usage
+==============
+
+
+Configure Default Plugins
+-------------------------
+
+
+**Geo Plugin:**
+
+The geo plugin was developed to enrich Thug's data by showing the location of all nodes in the scan tree.
+
+This requires a GeoPlugin.conf config file in /conf/plugins directory with the following: 
+
+.. code-block:: bash
+
+	[db_path]
+	city = /absolute/path/to/your/db/file
+	anonymous_ip = None
+	connection_type = None
+	isp = None
+
+	[dbs]
+	city = True
+	anonymous_ip = False
+	connection_type = False
+	isp = False
+
+
+We use the `GeoLite2 Free database <http://dev.maxmind.com/geoip/geoip2/geolite2/>`_ from MaxMind. Download GeoLite2 City database and provide the absolute path to the mmdb file. 
+
+
+
+
+
+
+
+Rumal is licensed under the GPLv2 or later. Rumal releases also include and make use of other libraries with their own separate licenses.
+
+The license is available `here <https://github.com/pdelsante/rumal/blob/master/COPYING>`_.
+

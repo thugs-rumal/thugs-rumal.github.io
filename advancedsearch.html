@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Search &mdash; Rumal 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Rumal 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Plugins" href="plugins.html"/>
+        <link rel="prev" title="Rumal Social" href="social.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Rumal
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedusage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#searchable-fields">Searchable Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useable-operators">Useable Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-messages">Error Messages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Rumal</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Advanced Search</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-search">
+<h1>Advanced Search<a class="headerlink" href="#advanced-search" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>This feature allows users to build complex queries to search among all scan available for that user. It will search among all public scans, user&#8217;s private scans and among scans within user&#8217;s groups.
+The search is done among Mongo dB fields returned by Thug.</p>
+<p>This feature is still in ongoing development.</p>
+<p>Combine your queries with logical operators and/or and parentheses to build complex queries.</p>
+</div>
+<div class="section" id="searchable-fields">
+<h2>Searchable Fields<a class="headerlink" href="#searchable-fields" title="Permalink to this headline">¶</a></h2>
+<p>The advanced search currently supports the following fields:</p>
+<ul class="simple">
+<li><strong>url</strong>: Name of the scanned url.</li>
+<li><strong>urls</strong>:  URL within the tree returned by Thug.</li>
+<li><strong>timestamp</strong>: Date/Time of scan in format year-month-day_hour:minute:second</li>
+<li><strong>id</strong>: id of the scan.</li>
+<li><strong>tag</strong>: Tags pinned to a scan.</li>
+</ul>
+</div>
+<div class="section" id="useable-operators">
+<h2>Useable Operators<a class="headerlink" href="#useable-operators" title="Permalink to this headline">¶</a></h2>
+<p>Typing your search with no operators will perform the search among all text fields. (eg. google ).</p>
+<ul class="simple">
+<li>&lt;field&gt; = &lt;value&gt; Contains</li>
+<li>&lt;field&gt; != &lt;value&gt; Does not Contains</li>
+<li>&lt;field&gt; == &lt;value&gt; Exact match</li>
+<li>&lt;field&gt; ~ &lt;value&gt; Mongo Regex</li>
+<li>&lt;field&gt; &gt;= &lt;value&gt; Greater than or equal</li>
+<li>&lt;field&gt; &gt; &lt;value&gt; Greater than</li>
+<li>&lt;field&gt; &lt;= &lt;value&gt; Lower than or equal</li>
+<li>&lt;field&gt; &lt; &lt;value&gt; Lower than</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>google and timestamp &gt;<span class="o">=</span> 2016-07-01_12:00:00
+<span class="nv">tag</span> <span class="o">==</span> malicious
+<span class="o">(</span>urls ~ .*son.* or timestamp &lt;<span class="o">=</span> 2016<span class="o">)</span> and <span class="nv">urls</span> <span class="o">=</span> amazon
+</pre></div>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<p>Unit test for queries are located in /rumal/interface/tests/test_advanced_search.py.</p>
+</div>
+<div class="section" id="error-messages">
+<h2>Error Messages<a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Could not make AST
+</pre></div>
+</div>
+<p>This error message arises when the search query you wrote is not understood. Please refer to the above on how to write a query.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plugins.html" class="btn btn-neutral float-right" title="Plugins" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="social.html" class="btn btn-neutral" title="Rumal Social" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016 Rumal Developers.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,1 +1,0 @@
-# thugs-rumal.github.io

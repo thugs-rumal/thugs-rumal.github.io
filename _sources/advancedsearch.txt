@@ -1,0 +1,76 @@
+Advanced Search 
+==================
+
+
+
+Usage
+-------
+
+This feature allows users to build complex queries to search among all scan available for that user. It will search among all public scans, user's private scans and among scans within user's groups.
+The search is done among Mongo dB fields returned by Thug. 
+
+This feature is still in ongoing development.
+
+
+Combine your queries with logical operators and/or and parentheses to build complex queries.
+
+
+Searchable Fields
+------------------
+
+The advanced search currently supports the following fields:
+
+- **url**: Name of the scanned url.
+- **urls**:  URL within the tree returned by Thug.
+- **timestamp**: Date/Time of scan in format year-month-day_hour:minute:second
+- **id**: id of the scan.
+- **tag**: Tags pinned to a scan.
+
+
+Useable Operators
+------------------
+
+Typing your search with no operators will perform the search among all text fields. (eg. google ).
+
+
+- <field> = <value> Contains
+- <field> != <value> Does not Contains
+- <field> == <value> Exact match
+- <field> ~ <value> Mongo Regex
+- <field> >= <value> Greater than or equal
+- <field> > <value> Greater than
+- <field> <= <value> Lower than or equal
+- <field> < <value> Lower than
+
+
+
+
+Examples
+-----------
+
+.. code-block:: bash
+	
+	google and timestamp >= 2016-07-01_12:00:00
+	tag == malicious
+	(urls ~ .*son.* or timestamp <= 2016) and urls = amazon
+
+
+
+Tests
+-----------
+
+Unit test for queries are located in /rumal/interface/tests/test_advanced_search.py.
+
+
+
+
+Error Messages
+---------------
+
+.. code-block:: bash
+
+	Could not make AST
+
+This error message arises when the search query you wrote is not understood. Please refer to the above on how to write a query.
+
+

@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; Rumal 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Rumal 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Advanced Usage" href="advancedusage.html"/>
+        <link rel="prev" title="Docker" href="docker.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Rumal
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-first-scan">Running First Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scan-fields">Scan Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-results">Understanding the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-scans">My Scans</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advancedusage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Rumal</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Quickstart</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-first-scan">
+<h2>Running First Scan<a class="headerlink" href="#running-first-scan" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/new_scan.jpg" src="_images/new_scan.jpg" />
+<ul class="simple">
+<li>Start the frontend and backend server as per <a class="reference internal" href="install.html#install-label"><span class="std std-ref">Installation</span></a>.</li>
+<li>Enter the frontend daemon URL in the browser.</li>
+<li>Login using the super-admin credentials.</li>
+<li>Click on new scan button and enter the details.</li>
+</ul>
+</div>
+<div class="section" id="scan-fields">
+<h2>Scan Fields<a class="headerlink" href="#scan-fields" title="Permalink to this headline">¶</a></h2>
+<p>These fields refer to the options provided in Thug, details can be found <a class="reference external" href="http://buffer.github.io/thug/doc/usage.html#basic-usage">here</a>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span>
+
+<span class="n">Target</span> <span class="n">URL</span>              <span class="n">url</span> <span class="n">to</span> <span class="n">scan</span> <span class="p">(</span><span class="n">url</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">)</span>
+<span class="n">Referrer</span>                <span class="o">-</span><span class="n">r</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">specifying</span> <span class="n">a</span> <span class="n">referrer</span>
+<span class="n">User</span> <span class="n">Agent</span>              <span class="o">-</span><span class="n">u</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">select</span> <span class="n">a</span> <span class="n">user</span> <span class="n">agent</span> <span class="kn">from</span> <span class="nn">list</span>
+<span class="n">Proxy</span>                   <span class="o">-</span><span class="n">p</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">proxy</span> <span class="p">(</span><span class="n">currently</span> <span class="n">noy</span> <span class="n">supported</span><span class="p">)</span>
+<span class="n">Backend</span> <span class="n">Choice</span>          <span class="n">backend</span> <span class="n">to</span> <span class="n">run</span> <span class="n">the</span> <span class="n">scan</span> <span class="n">on</span> <span class="ow">or</span> <span class="nb">any</span><span class="o">.</span>
+
+
+<span class="n">Advanced</span> <span class="n">Options</span><span class="p">:</span>
+
+<span class="n">Specified</span> <span class="n">Dom</span> <span class="n">events</span> <span class="n">handling</span>                   <span class="o">-</span><span class="n">e</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Maximum</span> <span class="n">setTimout</span><span class="o">/</span><span class="n">setInterval</span> <span class="n">delay</span> <span class="p">(</span><span class="n">ms</span><span class="p">)</span>        <span class="o">-</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Analysis</span> <span class="n">timeout</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>                            <span class="o">-</span><span class="n">T</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Maximum</span> <span class="n">pages</span> <span class="n">to</span> <span class="n">fetch</span>                          <span class="o">-</span><span class="n">t</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Disable</span> <span class="n">local</span> <span class="n">web</span> <span class="n">cache</span>                         <span class="o">-</span><span class="n">m</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Verbose</span> <span class="n">mode</span>                                    <span class="o">-</span><span class="n">v</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Quiet</span> <span class="p">(</span><span class="n">disable</span> <span class="n">console</span> <span class="n">logging</span><span class="p">)</span>                 <span class="o">-</span><span class="n">q</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Debug</span> <span class="n">mode</span>                                      <span class="o">-</span><span class="n">d</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">AST</span> <span class="n">debug</span> <span class="n">mode</span> <span class="p">(</span><span class="n">requires</span> <span class="n">Debug</span> <span class="n">mode</span><span class="p">)</span>            <span class="o">-</span><span class="n">a</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">HTTP</span> <span class="n">debug</span> <span class="n">mode</span>                                 <span class="o">-</span><span class="n">g</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Extensive</span> <span class="n">fetch</span> <span class="n">on</span> <span class="n">linked</span> <span class="n">pages</span>                 <span class="o">-</span><span class="n">E</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Broken</span> <span class="n">URL</span> <span class="n">mode</span>                                 <span class="o">-</span><span class="n">B</span> <span class="ow">in</span> <span class="n">Thug</span>
+
+<span class="n">Plugin</span> <span class="n">Options</span><span class="p">:</span>
+
+<span class="n">Adobe</span> <span class="n">Acrobat</span> <span class="n">Reader</span> <span class="n">version</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mf">9.1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>           <span class="o">-</span><span class="n">A</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">Adobe</span> <span class="n">Acrobat</span> <span class="n">Reader</span> <span class="n">version</span>
+<span class="n">Disable</span> <span class="n">Adobe</span> <span class="n">Acrobat</span> <span class="n">Reader</span> <span class="n">plugin</span>                     <span class="o">-</span><span class="n">P</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">disable</span> <span class="n">Adobe</span> <span class="n">Acrobat</span> <span class="n">Reader</span> <span class="n">plugin</span>
+<span class="n">Shockwave</span> <span class="n">Flash</span> <span class="n">version</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">64.0</span><span class="p">)</span>            <span class="o">-</span><span class="n">S</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">Shockwave</span> <span class="n">Flash</span> <span class="n">version</span>
+<span class="n">Disable</span> <span class="n">Shockwave</span> <span class="n">Flash</span> <span class="n">plugin</span>                          <span class="o">-</span><span class="n">R</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">disable</span> <span class="n">Shockwave</span> <span class="n">Flash</span> <span class="n">plugin</span>
+<span class="n">Java</span> <span class="n">plugin</span> <span class="n">version</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mf">1.6</span><span class="o">.</span><span class="mf">0.32</span><span class="p">)</span>                 <span class="o">-</span><span class="n">J</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">JavaPlugin</span> <span class="n">version</span>
+<span class="n">Enable</span><span class="o">/</span> <span class="n">Disable</span> <span class="n">Java</span> <span class="n">plugin</span>                             <span class="o">-</span><span class="n">K</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">disable</span> <span class="n">Java</span> <span class="n">plugin</span>
+
+<span class="n">External</span> <span class="n">Services</span><span class="p">:</span>
+
+<span class="n">Query</span> <span class="n">VirusTotal</span> <span class="k">for</span> <span class="n">samples</span>            <span class="o">-</span><span class="n">y</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">query</span> <span class="n">VirusTotal</span> <span class="k">for</span> <span class="n">samples</span> <span class="n">analysis</span>
+<span class="n">Submit</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">VirusTotal</span>            <span class="o">-</span><span class="n">b</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">submit</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">VirusTotal</span>
+<span class="n">Disable</span> <span class="n">HoneyAgent</span> <span class="n">support</span>              <span class="o">-</span><span class="n">N</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">,</span> <span class="n">disable</span> <span class="n">HoneyAgent</span> <span class="n">support</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="understanding-the-results">
+<h2>Understanding the Results<a class="headerlink" href="#understanding-the-results" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/report.jpg" src="_images/report.jpg" />
+<ul class="simple">
+<li><strong>1:</strong> Panel that displays the scan tree produced by Thug. The orange node is the currently selected node, purple nodes can be double clicked to expand while blue nodes are leafs of the tree. Nodes can be selected by clicking on then. This panel is also used for the GeoPlugin to display location of IPs can be switched via the 8 button.</li>
+<li><strong>2:</strong> Basic information panel that gives the url and IP address of the currently selected node.</li>
+<li><strong>3:</strong> Samples, Codes and Plugins panels that contain data returned by Thug. These panels only display their data when hovered over by the mouse.</li>
+<li><strong>4:</strong> Tags are used to give single words or short text information describing a scan. This can help users identify key aspects of a scan. Suggestions are given to the user when typing a tag with all existing tags. For public scans, tags can be added by everyone. If a scan is shared within a group, all group members can add tags to a scan.</li>
+<li><strong>5:</strong> Commenting on a node. You can add comments on the currently selected node, just select you node and click on this tab to view and post comments. The number of comments is displayed. Only authorised users can post comments, within public scans everyone can post a comment. But when shared within a group, only group members have access to this feature.</li>
+<li><strong>6:</strong> This tab allows the owner of the scan to change the sharing model and shred groups options of a scan.</li>
+<li><strong>7:</strong> Bookmarking a scan. Displayed in My Scans</li>
+<li><strong>8:</strong> Switch to Geoplugin. Panel 1 changes to display a Map of all IPs present within the tree.</li>
+</ul>
+</div>
+<div class="section" id="my-scans">
+<h2>My Scans<a class="headerlink" href="#my-scans" title="Permalink to this headline">¶</a></h2>
+<p>Rumal also allows you to see all your previous scans. Previous scans are accessible by clicking on the MyScans tab. All your scans are displayed here as well as all your bookmarked scans.</p>
+<img alt="_images/myscans.jpg" src="_images/myscans.jpg" />
+<p><a class="reference external" href="https://datatables.net/">JQuery DataTables</a> is used for displaying list of scans (also used within groups pages and advanced searches). A useful feature of DataTables provides users with the ability to filter and search the list.</p>
+<p>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advancedusage.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docker.html" class="btn btn-neutral" title="Docker" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2016 Rumal Developers.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

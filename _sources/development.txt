@@ -1,0 +1,17 @@
+Development
+==============
+
+**Github Repository**
+
+If you want to contribute, head over to our `Github page <https://github.com/thugs-rumal>`_ for the rumal front-end, back-end and docker Repositories.
+
+**Rumal Developers**
+
+A list of contributors can be found on the `Rumal Github page <https://github.com/orgs/thugs-rumal/people>`_.
+
+
+Future Developments
+----------------------
+
+- **Plugin development:** The current plugin architecture allows developers to create their own enrichment of Thug's data but no way of displaying them. There needs to be a way of providing a way for developers to decide how to display their enriched data.
+
