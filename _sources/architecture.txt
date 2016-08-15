@@ -69,12 +69,18 @@ Currently configuration files on the back-end and front-end are used to link the
 
     [backend]
     host = localhost
-    is_master = true 
+    is_master = True 
+
+    (optional)
+    [thug]
+    use_sudo = True
 
 Back-end config file. 
 
 - `host`: IP address of the master back-end where the any_queue is located. If the current back-end is master then this should be localhost. 
 - `is_master`: Boolean telling if this is master back-end.
+- `use sudo and thug`: These are optional fields in the config file to specify that the docker instance of Thug is run with the sudo command. If not given run_thug doesn't use sudo by default.
+
 
 
 
