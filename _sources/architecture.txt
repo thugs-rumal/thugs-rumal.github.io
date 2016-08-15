@@ -38,7 +38,9 @@ Rumal’s front end sends a request to an RPC queue connected to one or more bac
 Rumal was built to support the use multiple deployed front-ends and back-ends. Users can choice which back-end to use or the scans can be picked up by the first available back-end.
 
 
-| A back-end is listening on 2 rabbitmq queues, a single any_queue (may be local or remote) and its own the private queue. The typical configuration is to have one any queue that all back-ends have access to, the back-end that contains the any_queue is called the master back-end. Each back-end should have its own private queue.    
+| A back-end is listening on 2 rabbitmq queues, a single any_queue (may be local or remote) and its own the private queue. The typical configuration is to have one any queue that all back-ends have access to, the back-end that contains the any_queue is called the master back-end. Each back-end should have its own private queue.
+
+    
 
 .. image:: nstatic/rabbitSingle.png
 
