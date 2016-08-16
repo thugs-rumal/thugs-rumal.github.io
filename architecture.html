@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Architecture &mdash; Rumal 0.0.1 documentation</title>
+  <title>Architecture &mdash; Rumal 0.0.1 alpha documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Rumal 0.0.1 documentation" href="index.html"/>
+    <link rel="top" title="Rumal 0.0.1 alpha documentation" href="index.html"/>
         <link rel="next" title="Installation" href="install.html"/>
         <link rel="prev" title="Introduction" href="intro.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.0.1
+                0.0.1 alpha
               </div>
             
           
@@ -179,13 +179,18 @@ BE-02 receives the task on its private queue and process the message. Once the T
 <p>Currently configuration files on the back-end and front-end are used to link them together.</p>
 <div class="highlight-sh"><div class="highlight"><pre><span></span><span class="o">[</span>backend<span class="o">]</span>
 <span class="nv">host</span> <span class="o">=</span> localhost
-<span class="nv">is_master</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">is_master</span> <span class="o">=</span> True
+
+<span class="o">(</span>optional<span class="o">)</span>
+<span class="o">[</span>thug<span class="o">]</span>
+<span class="nv">use_sudo</span> <span class="o">=</span> True
 </pre></div>
 </div>
 <p>Back-end config file.</p>
 <ul class="simple">
 <li><cite>host</cite>: IP address of the master back-end where the any_queue is located. If the current back-end is master then this should be localhost.</li>
 <li><cite>is_master</cite>: Boolean telling if this is master back-end.</li>
+<li><cite>use sudo and thug</cite>: These are optional fields in the config file to specify that the docker instance of Thug is run with the sudo command. If not given run_thug doesn&#8217;t use sudo by default.</li>
 </ul>
 <div class="highlight-sh"><div class="highlight"><pre><span></span><span class="o">[</span>backend<span class="o">]</span>
 <span class="nv">host</span> <span class="o">=</span>
@@ -244,7 +249,7 @@ BE-02 receives the task on its private queue and process the message. Once the T
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.0.1',
+            VERSION:'0.0.1 alpha',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
