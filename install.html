@@ -215,10 +215,20 @@ $ python manage.py enrich &gt; /dev/null 2&gt;<span class="p">&amp;</span><span 
 <div class="section" id="back-end">
 <h2>Back-end<a class="headerlink" href="#back-end" title="Permalink to this headline">¶</a></h2>
 <p><strong>Requirements:</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.docker.com/engine/installation/">Docker</a></li>
-<li><a class="reference external" href="https://docs.mongodb.com/manual/installation/">Mongodb</a></li>
-<li><a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a></li>
+<ul>
+<li><p class="first"><a class="reference external" href="https://docs.docker.com/engine/installation/">Docker</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://docs.mongodb.com/manual/installation/">Mongodb</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a></p>
+</li>
+<li><p class="first">Rumal-back launches Thug in the dockerized environment and uses the <code class="docutils literal"><span class="pre">unbuffer</span></code> command. This can be installed with the <strong>expect</strong> package by running:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo apt-get install expect
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ul>
 <p>You can find a list of required python modules in requirements.txt</p>
 <p><strong>Docker:</strong></p>
